@@ -11,6 +11,7 @@ const hoursEl = document.querySelector('.value[data-hours]');
 const minutesEl = document.querySelector('.value[data-minutes]');
 const secondsEl = document.querySelector('.value[data-seconds]');
 
+
 const timerBlock = document.querySelector('.timer');
 const timerElements = document.querySelectorAll('.field');
 
@@ -37,10 +38,10 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates, dateStr, instance) {
-    currentDate = selectedDates[0].getTime();
-    pickerDate = instance.now.getTime();
+    pickerDate = selectedDates[0].getTime();
+    currentDate = instance.now.getTime();
     // Сравниваем значение выбраное пользователем и текущую дату
-    if (currentDate - pickerDate < 0) {
+    if (currentDate - pickerDate > 0) {
       windowAlert();
     } else {
       activationStartBtn();
