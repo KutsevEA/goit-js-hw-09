@@ -59,7 +59,8 @@ function windowAlert() {
 }
 
 function countDown() {
-  leftTime = currentDate - pickerDate;
+  leftTime = pickerDate - currentDate;
+
   intervalId = setInterval(() => {
     (leftTime -= 1000), checkLeftTime(), paintDigits();
   }, 1000);
